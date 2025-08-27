@@ -8,7 +8,6 @@ public class CrearOrden {
 
     private String URL_BASE;
     private Response response;
-    private static long idgenerado;
 
     public void setURL_BASE(String url) {this.URL_BASE = url;}
 
@@ -33,7 +32,7 @@ public class CrearOrden {
                 .then()
                 .log().all()
                 .extract().response();
-        idgenerado = response.jsonPath().getLong("id"); //almacenamos el id generado ya que el servicio crea uno diferente al que definimos en el body
+       
     }
 
     public void validarStatusCode(int statusCodeEsperado) {
@@ -67,3 +66,4 @@ public class CrearOrden {
 
 
 }
+
